@@ -1,9 +1,9 @@
-#content {
+#container {
     min-height: 99vh;
     min-width: 98vw;
     display: grid;
     grid-template-columns: 1fr 5fr;
-
+    
     #sidebar {
         grid-column: 1 / 2;
         height: 100%;
@@ -19,7 +19,7 @@
 
     #todoContainer {
         display: grid;
-        grid-template-rows: repeat(auto-fit, 9rem);
+        grid-template-rows: repeat(auto-fit, 12rem);
         margin: auto;
         justify-content: center;
         gap: 1rem;
@@ -33,4 +33,5 @@
         width: 45rem;
         padding-left: 5rem;
     }
+
 }
