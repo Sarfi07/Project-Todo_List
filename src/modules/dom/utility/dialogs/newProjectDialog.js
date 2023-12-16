@@ -22,6 +22,7 @@ export default function projectDialog() {
     const input = document.createElement('input');
     input.setAttribute('id', 'newProjectTitle');
     input.setAttribute('type', 'text');
+    input.required = true;
 
     div.appendChild(label);
     div.appendChild(input);
@@ -34,6 +35,7 @@ export default function projectDialog() {
     const cancelBtn = document.createElement('button');
     cancelBtn.setAttribute('formmethod', 'dialog');
     cancelBtn.classList.add('cancelBtn');
+    cancelBtn.classList.add('btn')
     cancelBtn.textContent = 'Cancel'
 
     cancelBtn.addEventListener('click', () => {

@@ -15,7 +15,13 @@ export default function createTodoDialog(projectTitle) {
 
     const divsRequired = ['title', 'description', 'priority', 'dueDate'];
     for (let i = 0; i < 4; i++) {
-        const newDiv = createDiv(divsRequired[i]);
+        let newDiv
+        if (divsRequired[i] == 'dueDate') {
+            newDiv = createDiv(divsRequired[i], 'date');
+        }
+        else {
+            newDiv = createDiv(divsRequired[i]);
+        }
 
         fieldset.appendChild(newDiv);
     }
@@ -28,7 +34,11 @@ export default function createTodoDialog(projectTitle) {
     const cancelBtn = document.createElement('button');
     cancelBtn.setAttribute('formmethod', 'dialog');
     cancelBtn.classList.add('btn');
-    cancelBtn.textContent = 'Cancel'
+    cancelBtn.textContent = 'Cancel';
+
+    cancelBtn.addEventListener('click', () => {
+        dialog.close()
+    })
 
     // hidden input for project title
     const hiddenTitle = document.createElement('input');
@@ -51,17 +61,22 @@ export default function createTodoDialog(projectTitle) {
         div.classList.add(`input${name}`);
 
         const label = document.createElement('label');
-        label.textContent = name;
+        label.textContent = capitalizeString(name);
         label.setAttribute('for', name);
 
         const input = document.createElement('input');
         input.setAttribute('id', name);
         input.setAttribute('type', type);
+        input.required = true;
 
         div.appendChild(label);
         div.appendChild(input);
 
         return div;
     }
+
+    function capitalizeString(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+      }
 
 }

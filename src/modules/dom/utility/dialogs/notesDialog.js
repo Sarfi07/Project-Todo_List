@@ -15,9 +15,11 @@ export default function notesDialog() {
     const editBtn = document.createElement('button');
     editBtn.textContent = "Edit Note";
     editBtn.setAttribute('id', 'editNoteBtn');
+    editBtn.classList.add('btn')
 
     const closeBtn = document.createElement('button');
     closeBtn.textContent = 'Close';
+    closeBtn.classList.add('btn')
     
     dialog.appendChild(heading);
     dialog.appendChild(notesBody);

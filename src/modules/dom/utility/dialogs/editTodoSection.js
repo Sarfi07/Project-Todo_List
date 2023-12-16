@@ -14,7 +14,8 @@ function titleEditDialog() {
     label.textContent = 'Enter New Title:'
 
     const inputTitle = document.createElement('input');
-    inputTitle.setAttribute('id', 'newTitle')
+    inputTitle.setAttribute('id', 'newTitle');
+    inputTitle.required = true;
 
 
     const submitBtn = document.createElement('button');
@@ -28,6 +29,10 @@ function titleEditDialog() {
     cancelBtn.classList.add('btn');
     cancelBtn.classList.add('cancelBtn');
     cancelBtn.textContent = 'Cancel';
+
+    cancelBtn.addEventListener('click', () => {
+        dialog.close()
+    })
 
 
     fieldset.appendChild(label);
@@ -59,8 +64,10 @@ function descriptionEditDialog() {
     const label = document.createElement('label');
     label.textContent = 'Enter New description:'
 
-    const inputTitle = document.createElement('input');
-    inputTitle.setAttribute('id', 'newDescription')
+    const inputDescription= document.createElement('input');
+    inputDescription.setAttribute('id', 'newDescription');
+    inputDescription.required = true;
+
 
 
     const submitBtn = document.createElement('button');
@@ -75,9 +82,13 @@ function descriptionEditDialog() {
     cancelBtn.classList.add('cancelBtn');
     cancelBtn.textContent = 'Cancel';
 
+    cancelBtn.addEventListener('click', () => {
+        dialog.close()
+    })
+
 
     fieldset.appendChild(label);
-    fieldset.appendChild(inputTitle);
+    fieldset.appendChild(inputDescription);
 
     form.appendChild(fieldset);
     form.appendChild(submitBtn);
@@ -104,8 +115,10 @@ function priorityEditDialog() {
     const label = document.createElement('label');
     label.textContent = 'Enter New priority:'
 
-    const inputTitle = document.createElement('input');
-    inputTitle.setAttribute('id', 'newPriority')
+    const inputPriority = document.createElement('input');
+    inputPriority.setAttribute('id', 'newPriority');
+    inputPriority.required = true;
+
 
 
     const submitBtn = document.createElement('button');
@@ -120,9 +133,12 @@ function priorityEditDialog() {
     cancelBtn.classList.add('cancelBtn');
     cancelBtn.textContent = 'Cancel';
 
+    cancelBtn.addEventListener('click', () => {
+        dialog.close()
+    })
 
     fieldset.appendChild(label);
-    fieldset.appendChild(inputTitle);
+    fieldset.appendChild(inputPriority);
 
     form.appendChild(fieldset);
     form.appendChild(submitBtn);
@@ -149,8 +165,10 @@ function dueDateEditDialog() {
     const label = document.createElement('label');
     label.textContent = 'Enter New Date:'
 
-    const inputTitle = document.createElement('input');
-    inputTitle.setAttribute('id', 'newDuedate')
+    const inputDueDate = document.createElement('input');
+    inputDueDate.setAttribute('id', 'newDuedate');
+    inputDueDate.required = true;
+    inputDueDate.setAttribute('type', 'date');
 
 
     const submitBtn = document.createElement('button');
@@ -165,9 +183,13 @@ function dueDateEditDialog() {
     cancelBtn.classList.add('cancelBtn');
     cancelBtn.textContent = 'Cancel';
 
+    cancelBtn.addEventListener('click', () => {
+        dialog.close()
+    })
+
 
     fieldset.appendChild(label);
-    fieldset.appendChild(inputTitle);
+    fieldset.appendChild(inputDueDate);
 
     form.appendChild(fieldset);
     form.appendChild(submitBtn);

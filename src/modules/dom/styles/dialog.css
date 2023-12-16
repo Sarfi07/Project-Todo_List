@@ -1,0 +1,73 @@
+#addProjectDialog {
+    width: 50%;
+    height: 30%;
+
+    #addProjectForm {
+        height: 100%;
+        width: 100%;
+
+    }
+}
+
+select#reviseKey {
+    margin-left: 1.5rem;
+}
+
+
+dialog::backdrop {
+    backdrop-filter: blur(10px);
+}
+
+.btn {
+    font-size: 1.24rem;
+    border-radius: 16px;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    border: 2px solid rgb(153, 140, 140);
+
+}
+
+dialog {
+    border: none;
+    padding: 1.4rem;
+    border-radius: 10px;
+}
+
+#addTodoDialog {
+    width: 50%;
+    height: 30%;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+legend {
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding-bottom: 1rem;
+}
+fieldset {
+    height: 80%;
+    width: 95%;
+}
+
+input {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+#notesDialog {
+    width: 50%;
+
+    #notesHeading {
+        text-align: center;
+    }
+    #notesBody {
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+}
+

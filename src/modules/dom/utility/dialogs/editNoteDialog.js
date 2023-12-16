@@ -15,6 +15,7 @@ export default function editNoteDialog() {
 
     const input = document.createElement('input');
     input.setAttribute('id', 'editNoteInput');
+    input.required = true;
 
     const submitBtn = document.createElement('button');
     submitBtn.textContent = 'Submit';
@@ -24,6 +25,11 @@ export default function editNoteDialog() {
     const cancelBtn = document.createElement('button');
     cancelBtn.textContent = 'Cancel';
     cancelBtn.classList.add('cancelBtn')
+    cancelBtn.classList.add('btn');
+
+    cancelBtn.addEventListener('click', () => {
+        dialog.close()
+    })
 
     fieldset.appendChild(legend);
     fieldset.appendChild(label)

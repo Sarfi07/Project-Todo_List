@@ -19,6 +19,7 @@ function newChecklistDialog() {
 
     const input = document.createElement('input');
     input.setAttribute('id', 'newChecklistTitle');
+    input.required = true;
 
     fieldset.appendChild(inputLabel)
     fieldset.appendChild(input);
@@ -34,7 +35,11 @@ function newChecklistDialog() {
     cancelBtn.setAttribute('formmethod', 'dialog');
     cancelBtn.classList.add('btn');
     cancelBtn.classList.add('cancelBtn');
-    cancelBtn.textContent = 'Cancel'
+    cancelBtn.textContent = 'Cancel';
+
+    cancelBtn.addEventListener('click', () => {
+        dialog.close()
+    })
 
     form.appendChild(fieldset)
     form.appendChild(submitBtn);

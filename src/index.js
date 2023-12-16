@@ -16,3 +16,6 @@ initialLoad();
 // input type date
 // styling
 // change font
+
+// bug
+// changeProject name changes every other projectName

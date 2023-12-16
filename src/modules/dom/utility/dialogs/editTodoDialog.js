@@ -18,6 +18,7 @@ function editTodoDialog(title, projectName) {
     const select = document.createElement('select');
     select.setAttribute('id', 'reviseKey');
     select.setAttribute('name', 'reviseKey');
+    select.required = true;
 
     const disabledOption = document.createElement('option');
     disabledOption.selected = true;
@@ -48,6 +49,10 @@ function editTodoDialog(title, projectName) {
     cancelBtn.setAttribute('formmethod', 'dialog');
     cancelBtn.classList.add('btn');
     cancelBtn.textContent = 'Cancel';
+
+    cancelBtn.addEventListener('click', () => {
+        dialog.close()
+    })
 
 
     fieldset.appendChild(label);

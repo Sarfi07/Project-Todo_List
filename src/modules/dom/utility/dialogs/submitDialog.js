@@ -18,7 +18,7 @@ export default function submitDialog() {
         const projectTitle = document.getElementById('projectTitle').value;
 
         
-        const newTodo = createTodo(title, desc, priority, dueDate, '', []);
+        const newTodo = createTodo(title, desc, priority, new Date(dueDate), '', []);
         if (!title) {
             return 0;
         }

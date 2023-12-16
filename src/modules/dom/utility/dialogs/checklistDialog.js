@@ -10,7 +10,8 @@ export default function checklistDialog() {
 
     const addBtn = document.createElement('button');
     addBtn.setAttribute('id', 'addChecklistBtn');
-    addBtn.textContent = "Add Checklist"
+    addBtn.textContent = "Add Checklist";
+    addBtn.classList.add('btn')
 
 
     const checklistBody = document.createElement('div');
@@ -18,6 +19,7 @@ export default function checklistDialog() {
 
     const closeBtn = document.createElement('button');
     closeBtn.textContent = 'Close';
+    closeBtn.classList.add('btn')
 
 
     // const addChecklistDialog = newChecklistDialog();
@@ -26,11 +28,11 @@ export default function checklistDialog() {
     //     addChecklistDialog.showModal();
     // })
 
-    dialog.appendChild(addBtn);
     dialog.appendChild(heading);
     dialog.appendChild(checklistBody);
     dialog.appendChild(closeBtn);
-
+    dialog.appendChild(addBtn);
+    
     closeBtn.addEventListener('click', () => {
         dialog.close();
         const container = document.getElementById('checklistContainer');

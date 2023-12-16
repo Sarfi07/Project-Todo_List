@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import { editTodoDialog } from "./dialogs/editTodoDialog";
 export default function createTodoCard(todo, projectName) {
     const card = document.createElement('div');
@@ -6,7 +7,7 @@ export default function createTodoCard(todo, projectName) {
 
     const title = document.createElement('p');
     title.classList.add('title');
-    title.textContent = `Title: ${todo.title}`;
+    title.textContent = `${todo.title}`;
 
     const desc = document.createElement('p');
     desc.classList.add('desc');
@@ -18,7 +19,9 @@ export default function createTodoCard(todo, projectName) {
 
     const dueDate = document.createElement('p');
     dueDate.classList.add('dueDateP');
-    dueDate.textContent = todo.dueDate;
+    const d = new Date(todo.dueDate)
+    console.log()
+    dueDate.textContent = format(d, 'MMMM do yyyy');
 
     const editBtn = document.createElement('button');
     editBtn.textContent = 'Edit Todo';
@@ -38,10 +41,14 @@ export default function createTodoCard(todo, projectName) {
     checklistBtn.setAttribute('data-projectname', projectName);
     checklistBtn.textContent = "Checklist";
 
-    card.appendChild(title);
-    card.appendChild(desc);
-    card.appendChild(priority);
-    card.appendChild(dueDate);
+    const cardItems = document.createElement('div');
+    cardItems.classList.add('cardItems');
+
+    cardItems.appendChild(title);
+    cardItems.appendChild(desc);
+    cardItems.appendChild(priority);
+    cardItems.appendChild(dueDate);
+    card.appendChild(cardItems)
     card.appendChild(editBtn)
     card.appendChild(notesBtn);
     card.appendChild(checklistBtn)

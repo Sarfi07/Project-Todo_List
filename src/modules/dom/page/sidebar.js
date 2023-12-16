@@ -33,6 +33,8 @@ function createProjectList(projects) {
         const liElement = document.createElement('li');
         liElement.textContent = projects[i].name;
         liElement.addEventListener('click', () => {
+            removeActive();
+            liElement.classList.add('active');
             changeHomeBody(projects[i]);
             showDialogs();
             submitDialog();
@@ -42,4 +44,9 @@ function createProjectList(projects) {
     }
 
     return ulElement
+}
+
+function removeActive() {
+    const lis = document.querySelectorAll('li')
+    lis.forEach(li => li.classList.remove('active'))
 }

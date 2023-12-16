@@ -16,7 +16,8 @@ export default function changeProjectNameDialog(projectName) {
      label.textContent = 'Enter New Name:'
  
      const inputTitle = document.createElement('input');
-     inputTitle.setAttribute('id', 'newProjectName')
+     inputTitle.setAttribute('id', 'newProjectName');
+     inputTitle.required = true;
  
  
      const submitBtn = document.createElement('button');
@@ -30,6 +31,10 @@ export default function changeProjectNameDialog(projectName) {
      cancelBtn.classList.add('btn');
      cancelBtn.classList.add('cancelBtn');
      cancelBtn.textContent = 'Cancel';
+
+     cancelBtn.addEventListener('click', () => {
+          dialog.close()
+      })
  
  
      fieldset.appendChild(label);

@@ -1,6 +1,7 @@
 import { createHomeBody } from "./homeBody";
 import createSidebar from "./sidebar";
 import './../styles/home.css';
+import './../styles/dialog.css';
 
 export default function createBody(project, currentProject) {
     const homeBody = createHomeBody(currentProject);

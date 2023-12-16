@@ -18,6 +18,10 @@ export default function initialLoad() {
     const newBody = createBody(projects, projects[0]);
     
     content.appendChild(newBody)
+
+    const li = document.querySelector('li');
+    li.classList.add('active');
+    
     showDialogs();
     submitDialog();
 
